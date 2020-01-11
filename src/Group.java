@@ -1,23 +1,36 @@
 public class Group implements University {
 
-    private String[] students;
+    private Student[] students;
+    Student student = new Student();
 
     @Override
     public int getAverageMark(int[] marks) {
-        Student student = new Student();
+        int sum = 0;
+        for (int i = 0; i < students.length; i++){
 
-        return 0;
+        }
+        return sum/students.length;
     }
 
-    public Group(String[] students) {
+    public Group(){}
+
+    public Group(Student[] students) {
         this.students = students;
     }
 
-    public String[] getStudents() {
+    public Student[] getStudents() {
         return students;
     }
 
-    public void setStudents(String[] students) {
+    public void setStudents(Student[] students) {
         this.students = students;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 }

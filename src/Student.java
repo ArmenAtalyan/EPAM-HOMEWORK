@@ -42,6 +42,10 @@ public class Student implements University {
         this.subject = subject;
     }
 
+    public int getEachMark(int i){
+        return marks[i];
+    }
+
     public int[] getMarks() {
         return marks;
     }

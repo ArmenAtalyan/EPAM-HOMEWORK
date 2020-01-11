@@ -4,6 +4,8 @@ public class Department implements University {
 
     @Override
     public int getAverageMark(int[] marks) {
+        Group group = new Group();
+
         return 0;
     }
 
