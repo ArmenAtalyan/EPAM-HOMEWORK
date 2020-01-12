@@ -1,16 +1,16 @@
-public class InvalidMarkExeption extends Exception {
+class InvalidMarkException extends Exception {
 
-    public InvalidMarkExeption(){}
+    public InvalidMarkException(){}
 
-    public InvalidMarkExeption(String message) {
+    public InvalidMarkException(String message) {
         super(message);
     }
 
-    public InvalidMarkExeption(String message, Throwable cause) {
+    public InvalidMarkException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public InvalidMarkExeption(Throwable cause) {
+    public InvalidMarkException(Throwable cause) {
         super(cause);
     }
 }
