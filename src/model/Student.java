@@ -5,15 +5,6 @@ public class Student {
     private int id;
     private String name;
     private Mark[] marks;
-    private Group group;
-
-    public Group getGroup() {
-        return group;
-    }
-
-    public void setGroup(Group group) {
-        this.group = group;
-    }
 
     public Student(StudentBuilder builder) {
         id = builder.id;

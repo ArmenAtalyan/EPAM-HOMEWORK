@@ -5,9 +5,6 @@ public class Group {
     private Student[] students;
 
     public Group(Student... students) {
-        for (Student student : students) {
-            student.setGroup(this);
-        }
         this.students = students;
     }
 
