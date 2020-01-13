@@ -1,5 +1,6 @@
-class InvalidMarkException extends Exception {
+package exceptions;
 
+public class InvalidMarkException extends Exception {
     public InvalidMarkException(){}
 
     public InvalidMarkException(String message) {
