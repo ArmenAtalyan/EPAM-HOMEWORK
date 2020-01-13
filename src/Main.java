@@ -27,27 +27,27 @@ public class Main {
             Student student3 = new Student.StudentBuilder()
                     .id(3)
                     .name("Lilit")
-                    .marks(new Mark(karavarum, 12), new Mark(fizkult, 5), new Mark(fizika, 3), new Mark(patmutyun, 3), new Mark(cs, 3)).build();
+                    .marks(new Mark(karavarum, 10), new Mark(fizkult, 5), new Mark(fizika, 3), new Mark(patmutyun, 3), new Mark(cs, 3)).build();
             Student student4 = new Student.StudentBuilder()
                     .id(4)
                     .name("Vahram")
-                    .marks(new Mark(cs, 14), new Mark(matem, 11)).build();
+                    .marks(new Mark(cs, 10), new Mark(matem, 1)).build();
             Student student5 = new Student.StudentBuilder()
                     .id(4)
                     .name("Ani")
-                    .marks(new Mark(finansner, 11), new Mark(patmutyun, 17)).build();
+                    .marks(new Mark(finansner, 1), new Mark(patmutyun, 7)).build();
             Student student6 = new Student.StudentBuilder()
                     .id(4)
                     .name("Hakob")
-                    .marks(new Mark(socologia, -1), new Mark(matem, 11), new Mark(patmutyun, 18)).build();
+                    .marks(new Mark(socologia, 15), new Mark(matem, 8), new Mark(patmutyun, 8)).build();
             Student student7 = new Student.StudentBuilder()
                     .id(4)
                     .name("Arev")
-                    .marks(new Mark(socologia, 14), new Mark(matem, 11), new Mark(patmutyun, 18), new Mark(cs, 18)).build();
+                    .marks(new Mark(socologia, 4), new Mark(matem, 7), new Mark(patmutyun, 3), new Mark(cs, 2)).build();
             Student student8 = new Student.StudentBuilder()
                     .id(4)
                     .name("Sona")
-                    .marks(new Mark(finansner, 14)).build();
+                    .marks(new Mark(finansner, 4)).build();
 
 
         Group first = new Group(1, student1, student2);
