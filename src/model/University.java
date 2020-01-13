@@ -1,11 +1,24 @@
 package model;
 
+import exceptions.NullFacultyException;
+
 public class University {
 
+    private String name;
     private Faculty[] faculties;
 
-    public University(Faculty... faculties) {
+    public University(String name, Faculty... faculties) {
+        try {
+            if(faculties.length == 0){
+                throw new NullFacultyException();
+            }
+        }catch (NullFacultyException e){}
+        this.name = name;
         this.faculties = faculties;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public Faculty[] getFaculties() {

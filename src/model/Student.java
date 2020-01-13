@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.InvalidMarkException;
+
 public class Student {
 
     private int id;
@@ -28,6 +30,11 @@ public class Student {
         }
 
         public StudentBuilder marks(Mark... marks) {
+            try {
+                if(marks.length == 0){
+                    throw new InvalidMarkException();
+                }
+            }catch (InvalidMarkException e){}
             this.marks = marks;
             return this;
         }
