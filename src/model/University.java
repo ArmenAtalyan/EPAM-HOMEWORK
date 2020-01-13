@@ -7,12 +7,10 @@ public class University {
     private String name;
     private Faculty[] faculties;
 
-    public University(String name, Faculty... faculties) {
-        try {
-            if(faculties.length == 0){
+    public University(String name, Faculty... faculties) throws NullFacultyException {
+
+            if(faculties.length == 0)
                 throw new NullFacultyException();
-            }
-        }catch (NullFacultyException e){}
         this.name = name;
         this.faculties = faculties;
     }

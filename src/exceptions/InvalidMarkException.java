@@ -3,6 +3,6 @@ package exceptions;
 public class InvalidMarkException extends Exception {
     @Override
     public String toString() {
-        return "You must have at least one mark.";
+        return "Mark must be more than 0 and less than 10.";
     }
 }

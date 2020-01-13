@@ -7,12 +7,10 @@ public class Faculty  {
     private String name;
     private Group[] groups;
 
-    public Faculty(String name, Group... groups) {
-        try {
-            if(groups.length == 0){
+    public Faculty(String name, Group... groups) throws NullGroupException {
+
+            if(groups.length == 0)
                 throw new NullGroupException();
-            }
-        }catch (NullGroupException e){}
         this.name = name;
       this.groups = groups;
     }

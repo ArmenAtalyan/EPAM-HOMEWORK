@@ -1,6 +1,7 @@
 package model;
 
 import exceptions.InvalidMarkException;
+import exceptions.NullSubjectException;
 
 public class Student {
 
@@ -29,12 +30,9 @@ public class Student {
             return this;
         }
 
-        public StudentBuilder marks(Mark... marks) {
-            try {
-                if(marks.length == 0){
-                    throw new InvalidMarkException();
-                }
-            }catch (InvalidMarkException e){}
+        public StudentBuilder marks(Mark... marks) throws NullSubjectException {
+                if(marks.length == 0)
+                    throw new NullSubjectException();
             this.marks = marks;
             return this;
         }
