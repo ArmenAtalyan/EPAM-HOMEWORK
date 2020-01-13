@@ -1,6 +1,6 @@
 package model;
 
-import exceptions.NullFacultyException;
+import exception.NullFacultyException;
 
 public class University {
 

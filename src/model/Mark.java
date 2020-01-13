@@ -1,6 +1,6 @@
 package model;
 
-import exceptions.InvalidMarkException;
+import exception.InvalidMarkException;
 
 public class Mark {
     private Subject subject;

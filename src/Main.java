@@ -1,5 +1,6 @@
-import exceptions.*;
+import exception.*;
 import model.*;
+import service.Average;
 
 public class Main {
 
@@ -39,7 +40,7 @@ public class Main {
             Student student6 = new Student.StudentBuilder()
                     .id(4)
                     .name("Hakob")
-                    .marks(new Mark(socologia, 15), new Mark(matem, 8), new Mark(patmutyun, 8)).build();
+                    .marks(new Mark(socologia, 10), new Mark(matem, 8), new Mark(patmutyun, 8)).build();
             Student student7 = new Student.StudentBuilder()
                     .id(4)
                     .name("Arev")
@@ -64,7 +65,9 @@ public class Main {
         System.out.println("average for faculty " + kiber.getName() + " is " + Average.getAVGForFaculty(kiber, fizika));
         System.out.println("average for university " + university.getName() + " is " + Average.getAVGForUniversity(university, patmutyun));
 
-        }catch (InvalidMarkException | NullStudentsException | NullGroupException | NullFacultyException | NullSubjectException e){}
+        }catch (InvalidMarkException | NullStudentsException | NullGroupException | NullFacultyException | NullSubjectException e){
+            e.printStackTrace();
+        }
 
     }
 }

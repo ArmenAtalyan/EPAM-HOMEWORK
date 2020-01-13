@@ -1,6 +1,6 @@
 package model;
 
-import exceptions.NullStudentsException;
+import exception.NullStudentsException;
 
 public class Group {
 

@@ -1,6 +1,6 @@
 package model;
 
-import exceptions.NullGroupException;
+import exception.NullGroupException;
 
 public class Faculty  {
 

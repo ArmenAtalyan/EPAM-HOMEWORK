@@ -1,7 +1,6 @@
 package model;
 
-import exceptions.InvalidMarkException;
-import exceptions.NullSubjectException;
+import exception.NullSubjectException;
 
 public class Student {
 
