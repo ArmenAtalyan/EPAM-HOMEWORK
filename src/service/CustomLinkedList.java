@@ -1,6 +1,8 @@
 package service;
 
 import model.Student;
+
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class CustomLinkedList {
@@ -22,6 +24,14 @@ public class CustomLinkedList {
 
         public ListNode(Student student){
             this.student = student;
+        }
+
+        public Student getStudent() {
+            return student;
+        }
+
+        public ListNode getNext() {
+            return next;
         }
     }
 
@@ -85,5 +95,22 @@ public class CustomLinkedList {
 
     public boolean isEmpty(){
         return size == 0;
+    }
+
+    public Iterator<Student> iterator() {
+        Iterator<Student> iterator = new Iterator<Student>() {
+            private int currentIndex = 0;
+
+            @Override
+            public boolean hasNext() {
+                return currentIndex < size &&  head != null;
+            }
+
+            @Override
+            public Student next() {
+                return head.getStudent();
+            }
+        };
+        return iterator;
     }
 }
