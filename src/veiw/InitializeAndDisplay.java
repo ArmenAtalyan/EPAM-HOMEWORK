@@ -15,18 +15,20 @@ public class InitializeAndDisplay {
         this.array = array;
     }
 
-    public void initialize(){
-        for(int i = 0; i < array.length; i++){
+    public void initialize() {
+        for (int i = 0; i < array.length; i++) {
             dynamicArray.add(array[i]);
             linkedList.push(array[i]);
         }
     }
-    public void print(){
-        for (int i = 0; i < dynamicArray.size(); i++){
+
+    public void print() {
+        for (int i = 0; i < dynamicArray.size(); i++) {
             System.out.println(dynamicArray.get(i));
         }
-       Iterator<Student> it = linkedList.iterator();
-        while (it.hasNext()){
+        System.out.println();
+        Iterator<Student> it = linkedList.iterator();
+        while (it.hasNext()) {
             System.out.println(it.next());
         }
     }

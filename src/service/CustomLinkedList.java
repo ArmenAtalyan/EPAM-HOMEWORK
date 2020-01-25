@@ -17,12 +17,12 @@ public class CustomLinkedList {
         this.size = 0;
     }
 
-    private class ListNode{
+    private class ListNode {
         private Student student;
         private ListNode next;
         private ListNode previous;
 
-        public ListNode(Student student){
+        public ListNode(Student student) {
             this.student = student;
         }
 
@@ -35,9 +35,9 @@ public class CustomLinkedList {
         }
     }
 
-    public void push(Student student){
+    public void push(Student student) {
         ListNode newNode = new ListNode(student);
-        if(isEmpty())
+        if (isEmpty())
             tail = newNode;
         else
             head.previous = newNode;
@@ -47,11 +47,11 @@ public class CustomLinkedList {
         size++;
     }
 
-    public Student pop(){
-        if(isEmpty())
+    public Student pop() {
+        if (isEmpty())
             throw new NoSuchElementException();
         ListNode temp = head;
-        if(head == tail)
+        if (head == tail)
             tail = null;
         else
             head.next.previous = null;
@@ -62,11 +62,11 @@ public class CustomLinkedList {
         return temp.student;
     }
 
-    public void addLast(Student student){
+    public void addLast(Student student) {
         ListNode newNode = new ListNode(student);
-        if(isEmpty())
+        if (isEmpty())
             head = newNode;
-        else{
+        else {
             tail.next = newNode;
             newNode.previous = tail;
         }
@@ -74,11 +74,11 @@ public class CustomLinkedList {
         size++;
     }
 
-    public Student removeLast(){
-        if(isEmpty())
+    public Student removeLast() {
+        if (isEmpty())
             throw new NoSuchElementException();
         ListNode temp = tail;
-        if(head == tail)
+        if (head == tail)
             head = null;
         else
             tail.previous.next = null;
@@ -89,26 +89,31 @@ public class CustomLinkedList {
         return temp.student;
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
     public Iterator<Student> iterator() {
         Iterator<Student> iterator = new Iterator<Student>() {
-            private int currentIndex = 0;
+            ListNode current = head;
 
             @Override
             public boolean hasNext() {
-                return currentIndex < size &&  head != null;
+                return current != null;
             }
 
             @Override
             public Student next() {
-                return head.getStudent();
+                if (hasNext()) {
+                    Student student = current.student;
+                    current = current.next;
+                    return student;
+                }
+                return null;
             }
         };
         return iterator;

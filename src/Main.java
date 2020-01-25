@@ -34,6 +34,7 @@ public class Main {
 
         Collections.sort(list2);
         System.out.println("Sorting students by last name in ascending order " + "\n" + list2);
+        System.out.println();
 
         InitializeAndDisplay initAndPrint = new InitializeAndDisplay(students);
         initAndPrint.initialize();
