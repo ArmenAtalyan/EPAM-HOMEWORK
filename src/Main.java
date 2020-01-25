@@ -1,73 +1,56 @@
-import exception.*;
-import model.*;
-import service.Average;
+import comparators.AgeComparator;
+import comparators.FirstNameComparator;
+import model.Student;
+import service.CustomDynamicArray;
+import service.CustomLinkedList;
+
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
+        List<Student> list = new ArrayList<>();
+        List<Student> list2 = new LinkedList<>();
 
-        Subject qimia = new Subject(1, "History");
-        Subject matem = new Subject(2, "Math");
-        Subject fizika = new Subject(3, "Physics");
-        Subject socologia = new Subject(4, "Sociology");
-        Subject patmutyun = new Subject(5, "History");
-        Subject karavarum = new Subject(6, "Management");
-        Subject fizkult = new Subject(8, "sports");
-        Subject finansner = new Subject(9, "finance");
-        Subject cs = new Subject(3, "computer science");
+        Student s1 = new Student("Vardan", "Aramyan", 19);
+        Student s2 = new Student("Ani", "Khachatryan", 31);
+        Student s3 = new Student("Zaven", "Sahakyan", 58);
+        Student s4 = new Student("Sona", "Hakobyan", 39);
+        Student s5 = new Student("Babken", "Tunyan", 42);
+        list.add(s1);
+        list.add(s2);
+        list.add(s3);
+        list.add(s4);
+        list.add(s5);
 
-        try {
-            Student student1 = new Student.StudentBuilder()
-                    .id(1)
-                    .name("Vardan")
-                    .marks(new Mark(qimia, 8), new Mark(fizika, 3)).build();
-            Student student2 = new Student.StudentBuilder()
-                    .id(2)
-                    .name("Areg")
-                    .marks(new Mark(socologia, 7), new Mark(matem, 6), new Mark(patmutyun, 4)).build();
-            Student student3 = new Student.StudentBuilder()
-                    .id(3)
-                    .name("Lilit")
-                    .marks(new Mark(karavarum, 10), new Mark(fizkult, 5), new Mark(fizika, 3), new Mark(patmutyun, 3), new Mark(cs, 3)).build();
-            Student student4 = new Student.StudentBuilder()
-                    .id(4)
-                    .name("Vahram")
-                    .marks(new Mark(cs, 10), new Mark(matem, 1)).build();
-            Student student5 = new Student.StudentBuilder()
-                    .id(4)
-                    .name("Ani")
-                    .marks(new Mark(finansner, 1), new Mark(patmutyun, 7)).build();
-            Student student6 = new Student.StudentBuilder()
-                    .id(4)
-                    .name("Hakob")
-                    .marks(new Mark(socologia, 10), new Mark(matem, 8), new Mark(patmutyun, 8)).build();
-            Student student7 = new Student.StudentBuilder()
-                    .id(4)
-                    .name("Arev")
-                    .marks(new Mark(socologia, 4), new Mark(matem, 7), new Mark(patmutyun, 3), new Mark(cs, 2)).build();
-            Student student8 = new Student.StudentBuilder()
-                    .id(4)
-                    .name("Sona")
-                    .marks(new Mark(finansner, 4)).build();
+        list2.add(s1);
+        list2.add(s2);
+        list2.add(s3);
+        list2.add(s4);
+        list2.add(s5);
 
 
-        Group first = new Group(1, student1, student2);
-        Group second = new Group(2, student3, student4);
-        Group third = new Group(3, student5, student6);
-        Group fourth = new Group(4, student7, student8);
-        Faculty kiber = new Faculty("Cybernetics", first, second);
-        Faculty kirarakan = new Faculty("Maths", third, fourth);
-        University university = new University("EPH", kiber, kirarakan);
+//          Comparator ageComparator = new AgeComparator();
+//          Comparator firstNameComparator = new FirstNameComparator();
+//        Collections.sort(list, firstNameComp);
+//        System.out.println(list);
+//        Collections.sort(list, Collections.reverseOrder(ageComp));
+//        System.out.println(list);
+//        Collections.sort(list2);
+//        System.out.println(list2);
 
+        CustomDynamicArray dynamicArray = new CustomDynamicArray();
+        dynamicArray.add(s1);
+        dynamicArray.add(s2);
+        dynamicArray.add(s3);
+        dynamicArray.add(s4);
+        dynamicArray.add(s5);
+//        dynamicArray.remove(s3);
 
-        System.out.println("average for student " + student1.getName() + " is " + Average.getAVGForStudent(student1));
-        System.out.println("average for group " + first.getId() +  " is  " + Average.getAVGForGroup(first, matem));
-        System.out.println("average for faculty " + kiber.getName() + " is " + Average.getAVGForFaculty(kiber, fizika));
-        System.out.println("average for university " + university.getName() + " is " + Average.getAVGForUniversity(university, patmutyun));
-
-        }catch (InvalidMarkException | NullStudentsException | NullGroupException | NullFacultyException | NullSubjectException e){
-            e.printStackTrace();
+        for(int i = 0; i < dynamicArray.size(); i++){
+            System.out.println(dynamicArray.get(i));
         }
+
 
     }
 }
