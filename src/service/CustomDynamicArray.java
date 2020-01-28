@@ -29,17 +29,12 @@ public class CustomDynamicArray {
         for (int i = 0; i < indexSize; i++) {
             if (student.equals(students[i])) {
                 int temp = i;
-                students[i] = null;
-                while (temp < indexSize-1) {
+                while (temp < indexSize - 1) {
                     students[temp] = students[temp + 1];
-                    students[temp + 1] = null;
                     temp++;
                 }
                 indexSize--;
-                capacity--;
                 break;
-            } else {
-                throw new NullPointerException("There is no such object here.");
             }
         }
         return true;

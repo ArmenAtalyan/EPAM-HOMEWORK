@@ -40,5 +40,7 @@ public class Main {
         initAndPrint.initialize();
         initAndPrint.print();
 
+        List<String> list1 = new ArrayList<>();
+
     }
 }

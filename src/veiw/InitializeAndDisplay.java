@@ -20,7 +20,8 @@ public class InitializeAndDisplay {
             dynamicArray.add(array[i]);
             linkedList.push(array[i]);
         }
-        dynamicArray.remove(array[1]);
+        dynamicArray.remove(array[3]);
+        dynamicArray.remove(array[4]);
         linkedList.addLast(array[4]);
         linkedList.removeLast();
         linkedList.pop();
