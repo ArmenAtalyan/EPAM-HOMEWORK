@@ -14,9 +14,4 @@ public class NullSubjectException extends Exception {
     public NullSubjectException(Throwable cause) {
         super(cause);
     }
-
-    @Override
-    public String toString() {
-        return "You must have at least one subject.";
-    }
 }

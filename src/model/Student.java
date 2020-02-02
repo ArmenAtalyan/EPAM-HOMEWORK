@@ -31,7 +31,7 @@ public class Student {
 
         public StudentBuilder marks(Mark... marks) throws NullSubjectException {
                 if(marks.length == 0)
-                    throw new NullSubjectException();
+                    throw new NullSubjectException("You must have at least one subject.");
             this.marks = marks;
             return this;
         }

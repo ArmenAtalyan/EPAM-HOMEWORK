@@ -8,7 +8,7 @@ public class Mark {
 
     public Mark(Subject subject, int mark) throws InvalidMarkException {
         if(mark < 0 || mark > 10)
-            throw new InvalidMarkException();
+            throw new InvalidMarkException("Mark must be more than 0 and less than 10.");
         this.subject = subject;
         this.mark = mark;
     }

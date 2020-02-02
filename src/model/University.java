@@ -10,7 +10,7 @@ public class University {
     public University(String name, Faculty... faculties) throws NullFacultyException {
 
             if(faculties.length == 0)
-                throw new NullFacultyException();
+                throw new NullFacultyException("You must have at least one faculty.");
         this.name = name;
         this.faculties = faculties;
     }

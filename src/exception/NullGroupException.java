@@ -14,9 +14,4 @@ public class NullGroupException extends Exception {
     public NullGroupException(Throwable cause) {
         super(cause);
     }
-
-    @Override
-    public String toString() {
-        return "You must have at least one group.";
-    }
 }

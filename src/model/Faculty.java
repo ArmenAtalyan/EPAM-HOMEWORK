@@ -10,7 +10,7 @@ public class Faculty  {
     public Faculty(String name, Group... groups) throws NullGroupException {
 
             if(groups.length == 0)
-                throw new NullGroupException();
+                throw new NullGroupException("You must have at least one group.");
         this.name = name;
       this.groups = groups;
     }

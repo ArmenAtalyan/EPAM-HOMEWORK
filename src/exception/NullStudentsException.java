@@ -14,9 +14,4 @@ public class NullStudentsException extends Exception {
     public NullStudentsException(Throwable cause) {
         super(cause);
     }
-
-    @Override
-    public String toString() {
-        return "You must have at least one student.";
-    }
 }
